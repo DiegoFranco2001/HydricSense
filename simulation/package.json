@@ -1,0 +1,9 @@
+{
+    "name": "hydricsense",
+    "version": "0.0.1",
+    "description": "proyecto de sistemas de medicion",
+    "dependencies": {
+        "express": "^4.18.1",
+        "firebase": "^9.8.3"
+    }
+}

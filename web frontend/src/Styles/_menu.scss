@@ -1,0 +1,169 @@
+@use "base";
+
+.icon-menu {
+    background-color: map-get($map: base.$colors, $key: "theme-blue-04");
+    padding: 8px;
+    width: max-content;
+    position: fixed;
+    z-index: 100;
+    bottom: 64px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+
+    svg {
+        fill: map-get($map: base.$colors, $key: "scale-gray-10");
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover {
+        background-color: map-get($map: base.$colors, $key: "theme-blue-05");
+        cursor: pointer;
+    }
+}
+
+.group-separator {
+    border-top: 1px solid map-get($map: base.$colors, $key: "scale-gray-05");
+    background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+    color: map-get($map: base.$colors, $key: "scale-gray-05");
+    padding: 4px 4px 4px 16px;
+    font-size: 0.75rem;
+    margin: 0;
+    line-height: 0.75rem;
+}
+
+.menu-row {
+    margin: 0;
+    list-style-type: none;
+
+    a {
+        background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+        padding: 8px 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: map-get($map: base.$colors, $key: "scale-gray-02");
+        text-decoration: none;
+        margin: 0;
+
+        &:hover {
+            background-color: map-get($map: base.$colors, $key: "theme-blue-05");
+            color: map-get($map: base.$colors, $key: "scale-gray-10");
+            cursor: pointer;
+
+            svg {
+                fill: map-get($map: base.$colors, $key: "scale-gray-10");
+            }
+        }
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    svg {
+        fill: map-get($map: base.$colors, $key: "scale-gray-02");
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.menu-group {
+    padding: 20px 16px;
+}
+
+.menu {
+    background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+    border-top: 4px solid map-get($map: base.$colors, $key: "theme-blue-05");
+    border-bottom: 4px solid map-get($map: base.$colors, $key: "theme-blue-05");
+    border-radius: 8px;
+    height: 85%;
+}
+
+.dialog-panel, .panel {
+    position: fixed;
+    padding: 64px 16px;
+    width: 100%;
+    height: 100%;
+    background-color: map-get($map: base.$colors, $key: "panel");
+}
+
+.dialog-panel.hide {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+@mixin mobile-large {
+    .icon-menu {
+        right: 32px;
+    }
+
+    .panel {
+        padding: 64px 32px;
+    }
+}
+
+@mixin tablet {
+    .icon-menu {
+        right: 48px;
+    }
+
+    .panel {
+        padding: 64px 48px;
+    }
+}
+
+@mixin desktop {
+    .icon-menu {
+        display: none;
+    }
+
+    .group-separator {
+        padding: 4px 14px 4px 20px;
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .menu-row {
+        a {
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .menu-group {
+        padding: 24px 20px;
+    }
+
+    .menu {
+        position: initial;
+        border-radius: 12px;
+        height: 100%;
+    }
+
+    .panel {
+        position: initial;
+        background-color: unset;
+        padding: 20px;
+        height: 100vh;
+        width: 27.5%;
+    }
+
+    .hide {
+        display: initial;
+    }
+}

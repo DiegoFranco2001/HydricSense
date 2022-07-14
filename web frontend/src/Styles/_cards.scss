@@ -1,0 +1,226 @@
+@use "base";
+
+.card {
+    border-radius: 12px;
+    border: 1px solid map-get($map: base.$colors, $key: "scale-gray-06");
+    background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+
+    &.information {
+        padding: 16px;
+        margin-bottom: 20px;
+
+        p {
+            margin: 0;
+            line-height: 1rem;
+
+            &:first-child {
+                color: map-get($map: base.$colors, $key: "scale-gray-02");
+            }
+
+            &:last-child {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &.actual-value {
+        padding: 20px 32px;
+        p {
+            margin: 0;
+
+            &:first-child {
+                color: map-get($map: base.$colors, $key: "theme-blue-04");
+            }
+
+            &:last-child {
+                margin-top: 10px;
+                color: map-get($map: base.$colors, $key: "theme-blue-03");
+            }
+        }
+    }
+
+    &.value {
+        padding: 24px;
+        p {
+            margin: 0;
+            text-align: center;
+
+            &:first-child {
+                color: map-get($map: base.$colors, $key: "theme-blue-03");
+            }
+
+            &:last-child {
+                margin-top: 12px;
+                color: map-get($map: base.$colors, $key: "scale-gray-04");
+            }
+        }
+    }
+
+    &.processing {
+        padding: 16px 20px;
+        margin-bottom: 16px;
+        
+        p,
+        h4 {
+            margin: 0;
+        }
+
+        p {
+            line-height: 1rem;
+        }
+
+        h4 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 4px;
+        }
+    }
+
+    &.completed {
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+
+        p,
+        h4 {
+            margin: 0;
+        }
+
+        h4 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 4px;
+            width: 100%;
+        }
+    }
+}
+
+.dialog {
+    background-color: map-get($map: base.$colors, $key: "scale-gray-09");
+    padding: 16px 32px;
+    border-radius: 16px;
+}
+
+.statistic {
+    border-radius: 8px;
+    border: 1px solid map-get($map: base.$colors, $key: "scale-gray-06");
+
+    p {
+        margin: 0;
+        padding: 4px 16px;
+        text-align: center;
+
+        &:first-child {
+            background-color: map-get(
+                $map: base.$colors,
+                $key: "theme-blue-05"
+            );
+            color: map-get($map: base.$colors, $key: "scale-gray-08");
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+        }
+
+        &:last-child {
+            background-color: map-get(
+                $map: base.$colors,
+                $key: "scale-gray-10"
+            );
+            color: 1px solid map-get($map: base.$colors, $key: "scale-gray-02");
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+        }
+    }
+}
+
+.registered {
+    background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+
+    &:nth-child(2n) {
+        background-color: map-get($map: base.$colors, $key: "theme-blue-05");
+
+        p {
+            color: map-get($map: base.$colors, $key: "scale-gray-08");
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.registered-header {
+    background-color: map-get($map: base.$colors, $key: "theme-blue-03");
+
+    p {
+        margin: 0;
+        color: map-get($map: base.$colors, $key: "scale-gray-08");
+    }
+}
+
+.registered,
+.registered-header {
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin desktop {
+    .card {
+        border-radius: 16px;
+
+        &.information {
+            line-height: 1.25rem;
+            margin-bottom: 24px;
+            
+            p {
+                &:last-child {
+                    margin-top: 12px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        &.actual-value {
+            padding: 24px 36px;
+        }
+
+        &.processing {
+            padding: 20px 24px;
+            margin-bottom: 20px;
+
+            p {
+                line-height: 1.25rem;
+            }
+
+            h4 {
+                margin-top: 6px;
+            }
+        }
+
+        &.completed {
+            padding: 16px 24px;
+
+            h4 {
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+    .statistic {
+        border-radius: 12px;
+
+        p {
+            padding: 6px 20px;
+        }
+    }
+
+    .registered,
+    .registered-header {
+        padding: 6px 20px;
+    }
+}

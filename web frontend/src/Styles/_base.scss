@@ -1,0 +1,28 @@
+$font-family: 'Poppins', sans-serif;
+$font-weights: (
+    "regular": 400,
+    "extra-light": 200,
+    "bold": 700,
+    "semibold": 600 
+);
+$font-styles: (
+    "italic": italic 
+);
+$colors: (
+    "theme-blue-01": #0E0E52,
+    "theme-blue-02": #150578,
+    "theme-blue-03": #0D41E1,
+    "theme-blue-04": #0A85ED,
+    "theme-blue-05": #07C8F9,
+    "scale-gray-01": #212529,
+    "scale-gray-02": #343A40,
+    "scale-gray-03": #495057,
+    "scale-gray-04": #6C757D,
+    "scale-gray-05": #ADB5BD,
+    "scale-gray-06": #CED4DA,
+    "scale-gray-07": #DEE2E6,
+    "scale-gray-08": #E9ECEF,
+    "scale-gray-09": #F0F2F4,
+    "scale-gray-10": #F8F9FA,
+    "panel": rgba(0, 0, 0, 0.7)
+)

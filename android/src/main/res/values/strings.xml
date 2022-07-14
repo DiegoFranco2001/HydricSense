@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HydricSense</string>
+    <string name="alert">Verifique que el dispositivo esté encencedido y el teléfono tenga bluetooth activado!</string>
+    <string name="info">Esta aplicación es de uso exclusivo para la conexion bluetooth con el dispositivo, específicamente, para establecer las credenciales de conexión wifi (Contraseña, SSID).</string>
+    <string name="connection">Conectar</string>
+    <string name="frstinput">SSID : Usuario Wifi</string>
+    <string name="scndinput">Contraseña</string>
+    <string name="btn">Enviar</string>
+</resources>

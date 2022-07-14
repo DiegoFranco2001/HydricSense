@@ -1,0 +1,190 @@
+@use "base";
+@use "buttons";
+@use "cards";
+@use "menu";
+@use "layout";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;1,400&display=swap");
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    font-family: base.$font-family;
+    font-weight: map-get($map: base.$font-weights, $key: "regular");
+}
+
+body {
+    background-color: map-get($map: base.$colors, $key: "scale-gray-09");
+    position: relative;
+    margin: 0;
+}
+
+#root {
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: map-get($map: base.$colors, $key: "scale-gray-02");
+    font-weight: map-get($map: base.$font-weights, $key: "regular");
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    margin: 0 0 40px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+    margin: 0 0 32px 0;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    margin: 0 0 28px 0;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin: 0 0 24px 0;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
+p,
+a,
+li,
+b,
+i {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: map-get($map: base.$colors, $key: "scale-gray-03");
+}
+
+b {
+    font-weight: map-get($map: base.$font-weights, $key: "bold");
+}
+
+b,
+li,
+a,
+i {
+    color: inherit;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+.numerical {
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: map-get($map: base.$font-weights, $key: "extra-light");
+}
+
+.small {
+    font-size: 0.75rem;
+}
+
+main {
+    padding: 64px 16px;
+}
+
+@media screen and (min-width: 640px) {
+    @include menu.mobile-large;
+
+    main {
+        padding: 64px 32px;
+    }
+}
+
+@media screen and (min-width: 744px) {
+    @include menu.tablet;
+    @include layout.tablet;
+
+    main {
+        padding: 64px 48px;
+    }
+}
+
+@media screen and (min-width: 1024px)  {
+    @include layout.tablet-large;
+}
+
+@media screen and (min-width: 1280px) {
+    @include buttons.desktop;
+    @include cards.desktop;
+    @include menu.desktop;
+    @include layout.desktop;
+
+    h1 {
+        font-size: 2.75rem;
+        line-height: 3.5rem;
+        margin: 0 0 44px 0;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+        line-height: 3rem;
+        margin: 0 0 36px 0;
+    }
+
+    h3 {
+        font-size: 2rem;
+        line-height: 2.75rem;
+        margin: 0 0 32px 0;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        margin: 0 0 28px 0;
+    }
+
+    p {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin: 0 0 24px 0;
+    }
+
+    .numerical {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+    
+    .small {
+        font-size: 1rem;
+    }
+
+    section {
+        margin-bottom: 72px;
+    }
+
+    #root {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main {
+        width: 72.5%;
+        padding: 20px 72px;
+        height: 100vh;
+        overflow: auto;
+    }
+}

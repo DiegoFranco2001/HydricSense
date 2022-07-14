@@ -1,0 +1,84 @@
+@use "base";
+
+.view-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 1;
+    gap: 16px;
+
+    * {
+        flex-grow: 1;
+    }
+}
+
+.statistic-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 1rem;
+    color: map-get($map: base.$colors, $key: "scale-gray-03");
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+select,
+.input-box {
+    background-color: map-get($map: base.$colors, $key: "scale-gray-10");
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 4px 16px;
+    outline: none;
+    color: map-get($map: base.$colors, $key: "scale-gray-04");
+    border: 1px solid map-get($map: base.$colors, $key: "scale-gray-06");
+    border-radius: 4px;
+
+    &:focus {
+        color: map-get($map: base.$colors, $key: "scale-gray-01");
+    }
+}
+
+@mixin tablet {
+    .statistic-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@mixin tablet-large {
+    .statistic-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@mixin desktop {
+    .view-cards {
+        gap: 20px;
+    }
+
+    label {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    select,
+    .input-box {
+        font-size: 1.25rem;
+        border-radius: 8px;
+    }
+    .statistic-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
